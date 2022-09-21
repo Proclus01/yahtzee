@@ -72,11 +72,11 @@ class SmallStraight extends Rule {
     const d = new Set(dice);
 
       // straight can be 2,3,4 and either 1 or 5
-      if (d.has(2) && d.has(3) && d.has(4) && d.has(1) || d.has(5))
+      if (d.has(2) && d.has(3) && d.has(4) && (d.has(1) || d.has(5)))
         return this.score;
 
       // or straight can be 3,4,5 and either 2 or 6
-      if (d.has(3) && d.has(4) && d.has(5) && d.has(2) || d.has(6))
+      if (d.has(3) && d.has(4) && d.has(5) && (d.has(2) || d.has(6)))
         return this.score;
       
       return 0;
