@@ -21,7 +21,7 @@ class Die extends Component {
     let classes = `
       Die fas fa-dice-${
         this.props.numberWords[this.props.val - 1]
-      }
+      } fa-5x
     `;
 
     return (
