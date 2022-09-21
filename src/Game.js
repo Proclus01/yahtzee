@@ -49,8 +49,11 @@ class Game extends Component {
     // toggle whether idx is in locked or not
     this.setState(st => ({
       locked: [
+        // keep everything the same before the index
         ...st.locked.slice(0, idx),
+        // at the index, flip the state
         !st.locked[idx],
+        // and keep the rest of the array the same after the index
         ...st.locked.slice(idx + 1)
       ]
     }));
