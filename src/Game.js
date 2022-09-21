@@ -46,17 +46,20 @@ class Game extends Component {
   }
 
   toggleLocked(idx) {
-    // toggle whether idx is in locked or not
-    this.setState(st => ({
-      locked: [
-        // keep everything the same before the index
-        ...st.locked.slice(0, idx),
-        // at the index, flip the state
-        !st.locked[idx],
-        // and keep the rest of the array the same after the index
-        ...st.locked.slice(idx + 1)
-      ]
-    }));
+    // Freeze dice buttons when there are no rolls left
+    if (this.state.rollsLeft > 0) {
+            // toggle whether idx is in locked or not
+        this.setState(st => ({
+          locked: [
+            // keep everything the same before the index
+            ...st.locked.slice(0, idx),
+            // at the index, flip the state
+            !st.locked[idx],
+            // and keep the rest of the array the same after the index
+            ...st.locked.slice(idx + 1)
+          ]
+      }));
+    } 
   }
 
   doScore(rulename, ruleFn) {
