@@ -59,7 +59,7 @@ class Game extends Component {
 
   toggleLocked(idx) {
     // Freeze dice buttons when there are no rolls left
-    if (this.state.rollsLeft > 0) {
+    if (this.state.rollsLeft > 0 && !this.state.rolling) {
             // toggle whether idx is in locked or not
         this.setState(st => ({
           locked: [
