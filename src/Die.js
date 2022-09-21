@@ -17,7 +17,7 @@ class Die extends Component {
   }
 
   render() {
-    const {numberWords, locked, val} = this.props;
+    const {numberWords, locked, val, disabled} = this.props;
     
     let classes = `
       Die fas fa-dice-${
@@ -31,6 +31,7 @@ class Die extends Component {
       <button
         className={classes}
         onClick={this.handleClick}
+        disabled={disabled}
       >
       </button>
     );
