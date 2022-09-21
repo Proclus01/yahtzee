@@ -17,17 +17,19 @@ class Die extends Component {
   }
 
   render() {
+    const {numberWords, locked, val} = this.props;
     
     let classes = `
       Die fas fa-dice-${
-        this.props.numberWords[this.props.val - 1]
+        numberWords[val - 1]
       } fa-5x
     `;
+
+    if (locked) classes += "Die-locked";
 
     return (
       <button
         className={classes}
-        style={{ backgroundColor: this.props.locked ? "grey" : "black" }}
         onClick={this.handleClick}
       >
       </button>
